@@ -1,0 +1,11 @@
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csprojAssemblyReference.cache
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfoInputs.cache
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfo.cs
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CoreCompileInputs.cache
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.deps.json
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.dll
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.pdb
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\Reactor-2021.4.12s.dll
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CopyComplete
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.dll
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.pdb
