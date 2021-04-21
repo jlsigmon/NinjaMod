@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\19195\\Desktop\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {}
+    "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {}
   },
   "projects": {
-    "C:\\Users\\19195\\Desktop\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {
+    "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\19195\\Desktop\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+        "projectUniqueName": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
         "projectName": "NinjaMod",
-        "projectPath": "C:\\Users\\19195\\Desktop\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+        "projectPath": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
         "packagesPath": "C:\\Users\\19195\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\19195\\Desktop\\NinjaMod\\NinjaMod\\obj\\",
+        "outputPath": "D:\\Github\\NinjaMod\\NinjaMod\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

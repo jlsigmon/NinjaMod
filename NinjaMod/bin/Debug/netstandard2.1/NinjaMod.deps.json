@@ -10,7 +10,7 @@
       "NinjaMod/1.0.0": {
         "dependencies": {
           "Reactor.OxygenFilter.MSBuild": "0.3.0",
-          "Reactor-2021.4.12s": "0.4.0.0"
+          "Reactor-2021.3.31.3s": "0.4.0.0"
         },
         "runtime": {
           "NinjaMod.dll": {}
@@ -68,9 +68,9 @@
           }
         }
       },
-      "Reactor-2021.4.12s/0.4.0.0": {
+      "Reactor-2021.3.31.3s/0.4.0.0": {
         "runtime": {
-          "Reactor-2021.4.12s.dll": {
+          "Reactor-2021.3.31.3s.dll": {
             "assemblyVersion": "0.4.0.0",
             "fileVersion": "0.4.0.0"
           }
@@ -91,7 +91,7 @@
       "path": "reactor.oxygenfilter.msbuild/0.3.0",
       "hashPath": "reactor.oxygenfilter.msbuild.0.3.0.nupkg.sha512"
     },
-    "Reactor-2021.4.12s/0.4.0.0": {
+    "Reactor-2021.3.31.3s/0.4.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

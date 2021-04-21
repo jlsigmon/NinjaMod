@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jVjQfjP47JF9bOZYwNdGRZaPKICuJjp9RxKgLZddsP04cdjiOvbTlhWdTnWemBWd5iKfhU1h/kQJ+atdAUbj2A==",
+  "dgSpecHash": "t3Gbq/PUyLhUGEzXfFW/AeIc6W/1PN+kBbcKBd9CiFr+VUFxUL8TcDcAloh6ZVKfK20Q4kLIXYyKTg2dIa6yPw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\19195\\Desktop\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+  "projectFilePath": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\19195\\.nuget\\packages\\reactor.oxygenfilter.msbuild\\0.3.0\\reactor.oxygenfilter.msbuild.0.3.0.nupkg.sha512"
   ],
