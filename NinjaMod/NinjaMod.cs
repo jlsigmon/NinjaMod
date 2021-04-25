@@ -9,7 +9,7 @@ namespace NinjaMod
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
-    public class TemplatePlugin : BasePlugin
+    public class NinjaMod : BasePlugin
     {
         public const string Id = "me.change.please";
 
@@ -29,7 +29,7 @@ namespace NinjaMod
         {
             public static void Postfix(PlayerControl __instance)
             {
-                __instance.nameText.Text = PluginSingleton<TemplatePlugin>.Instance.Name.Value;
+                __instance.nameText.Text = PluginSingleton<NinjaMod>.Instance.Name.Value;
             }
         }
     }
