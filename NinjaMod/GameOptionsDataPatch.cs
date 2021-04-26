@@ -16,7 +16,7 @@ namespace NinjaMod
                __result +=  "Show Ninja: On" + "\n";
             else
                __result+="Show Ninja: Off" + "\n";
-           __result+= "Ninja Kill Cooldown: " + CustomGameOptions.NinjaKillCD.ToString() + "s";
+           __result+= "Ninja Kill Cooldown: " + CustomGameOptions.NinjaInvisCD.ToString() + "s";
 
         }
 
