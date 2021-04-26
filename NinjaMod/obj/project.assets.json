@@ -92,11 +92,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+      "projectUniqueName": "d:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
       "projectName": "NinjaMod",
-      "projectPath": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+      "projectPath": "d:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
       "packagesPath": "C:\\Users\\19195\\.nuget\\packages\\",
-      "outputPath": "D:\\Github\\NinjaMod\\NinjaMod\\obj\\",
+      "outputPath": "d:\\Github\\NinjaMod\\NinjaMod\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
