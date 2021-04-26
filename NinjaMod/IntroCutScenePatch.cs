@@ -12,9 +12,9 @@ namespace NinjaMod
             if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer))
             {
                 __instance.__this.Title.Text = "Ninja";
-                __instance.__this.Title.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                __instance.__this.Title.Color = new Color((float)0.5, (float)0.5, (float)0.5, 1);
                 __instance.__this.ImpostorText.Text = "Be Sneaky Beaky Like";
-                __instance.__this.BackgroundBar.material.color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                __instance.__this.BackgroundBar.material.color = new Color((float)0.5, (float)0.5, (float)0.5, 1);
 
             }
         }

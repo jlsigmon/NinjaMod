@@ -26,8 +26,6 @@ namespace NinjaMod
         {
             log.LogMessage("Ninja Mod loaded");
 
-            
-
             Harmony.PatchAll();
         }
 
