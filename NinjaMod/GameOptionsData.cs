@@ -62,9 +62,9 @@ namespace NinjaMod
                 
                 System.Collections.Generic.List<OptionBehaviour> NewOptions = __instance.Children.ToList();
 
-                ShowNinjaOption = PrepareToggle(__instance, "Show Sheriff", CustomGameOptions.ShowNinja);
+                ShowNinjaOption = PrepareToggle(__instance, "Show Ninja", CustomGameOptions.ShowNinja);
                 NinjaCooldown =
-                    PrepareNumberOption(__instance, "Sheriff Kill Cooldown", CustomGameOptions.NinjaKillCD);
+                    PrepareNumberOption(__instance, "Ninja Kill Cooldown", CustomGameOptions.NinjaKillCD);
                 
                 NewOptions.Add(ShowNinjaOption);
                 NewOptions.Add(NinjaCooldown);

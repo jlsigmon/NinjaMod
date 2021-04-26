@@ -15,22 +15,21 @@ namespace NinjaMod
 
         public Harmony Harmony { get; } = new Harmony(Id);
 
-        public ConfigEntry<string> Name { get; private set; }
+        public static BepInEx.Logging.ManualLogSource log;
+
+        public NinjaMod()
+        {
+            log = Log;
+        }
 
         public override void Load()
         {
-            Name = Config.Bind("Fake", "Name", ":>");
+            log.LogMessage("Ninja Mod loaded");
+
+            
 
             Harmony.PatchAll();
         }
 
-        [HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.FixedUpdate))]
-        public static class ExamplePatch
-        {
-            public static void Postfix(PlayerControl __instance)
-            {
-                __instance.nameText.Text = PluginSingleton<NinjaMod>.Instance.Name.Value;
-            }
-        }
     }
 }
