@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Levelup 3\\Documents\\Among Us 4s(working ver)\\NinjaMod\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {}
+    "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Levelup 3\\Documents\\Among Us 4s(working ver)\\NinjaMod\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {
+    "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Levelup 3\\Documents\\Among Us 4s(working ver)\\NinjaMod\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+        "projectUniqueName": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
         "projectName": "NinjaMod",
-        "projectPath": "C:\\Users\\Levelup 3\\Documents\\Among Us 4s(working ver)\\NinjaMod\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
-        "packagesPath": "C:\\Users\\Levelup 3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Levelup 3\\Documents\\Among Us 4s(working ver)\\NinjaMod\\NinjaMod\\NinjaMod\\obj\\",
+        "projectPath": "D:\\Github\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+        "packagesPath": "C:\\Users\\19195\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\NinjaMod\\NinjaMod\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Levelup 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\19195\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

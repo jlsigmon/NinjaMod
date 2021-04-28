@@ -33,3 +33,5 @@ C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod
 C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.pdb
 C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.Properties.Resources.resources
 C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.GenerateResource.cache
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.Properties.Resources.resources
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.GenerateResource.cache

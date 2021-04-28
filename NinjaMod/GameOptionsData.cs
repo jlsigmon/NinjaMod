@@ -63,8 +63,13 @@ namespace NinjaMod
                 System.Collections.Generic.List<OptionBehaviour> NewOptions = __instance.Children.ToList();
 
                 ShowNinjaOption = PrepareToggle(__instance, "Show Ninja", CustomGameOptions.ShowNinja);
+<<<<<<< Updated upstream
                 NinjaInvisCooldown =
                     PrepareNumberOption(__instance, "Ninja Invisibility Cooldown", CustomGameOptions.NinjaInvisCD);
+=======
+                NinjaCooldown =
+                    PrepareNumberOption(__instance, "Ninja Cooldown", CustomGameOptions.NinjaKillCD);
+>>>>>>> Stashed changes
                 
                 NewOptions.Add(ShowNinjaOption);
                 NewOptions.Add(NinjaInvisCooldown);
