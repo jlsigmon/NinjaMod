@@ -80,7 +80,7 @@ namespace NinjaMod
                                     Ninja = player;
                                     if (CustomGameOptions.ShowNinja)
                                     {
-                                        player.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                                        player.nameText.Color = new Color((float)0.5, (float)0.5, (float)0.5, 1);
                                     }
                                 }
                             }
@@ -91,7 +91,7 @@ namespace NinjaMod
                     case (byte)CustomRPC.SyncCustomSettings:
                         {
                             CustomGameOptions.ShowNinja = reader.ReadBoolean();
-                            CustomGameOptions.NinjaKillCD = BitConverter.ToSingle(reader.ReadBytes(4).ToArray(), 0);
+                            CustomGameOptions.NinjaInvisCD = BitConverter.ToSingle(reader.ReadBytes(4).ToArray(), 0);
                             break;
                         }
                     
@@ -157,7 +157,7 @@ namespace NinjaMod
             
             DateTime now = DateTime.UtcNow;
             TimeSpan diff = now - lastKilled;
-            var KillCoolDown = CustomGameOptions.NinjaKillCD * 1000.0f;
+            var KillCoolDown = CustomGameOptions.NinjaInvisCD * 1000.0f;
             
             if (KillCoolDown - (float)diff.TotalMilliseconds < 0)
                 return 0;
@@ -281,7 +281,7 @@ namespace NinjaMod
                 MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SyncCustomSettings, Hazel.SendOption.None, -1);
 
                 writer.Write(CustomGameOptions.ShowNinja);
-                writer.Write(CustomGameOptions.NinjaKillCD);
+                writer.Write(CustomGameOptions.NinjaInvisCD);
                 
                 AmongUsClient.Instance.FinishRpcImmediately(writer);
             }

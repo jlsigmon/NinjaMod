@@ -64,7 +64,7 @@ namespace NinjaMod
 
                 ShowNinjaOption = PrepareToggle(__instance, "Show Ninja", CustomGameOptions.ShowNinja);
                 NinjaCooldown =
-                    PrepareNumberOption(__instance, "Ninja Kill Cooldown", CustomGameOptions.NinjaKillCD);
+                    PrepareNumberOption(__instance, "Ninja Kill Cooldown", CustomGameOptions.NinjaInvisCD);
                 
                 NewOptions.Add(ShowNinjaOption);
                 NewOptions.Add(NinjaCooldown);
@@ -109,11 +109,11 @@ namespace NinjaMod
         {
             if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaCooldown.TitleText.Text)
             {
-                CustomGameOptions.NinjaKillCD = Math.Min(CustomGameOptions.NinjaKillCD + 2.5f, 45);
+                CustomGameOptions.NinjaInvisCD = Math.Min(CustomGameOptions.NinjaInvisCD + 2.5f, 45);
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
-                __instance.oldValue = CustomGameOptions.NinjaKillCD;
-                __instance.Value = CustomGameOptions.NinjaKillCD;
-                __instance.ValueText.Text = CustomGameOptions.NinjaKillCD.ToString();
+                __instance.oldValue = CustomGameOptions.NinjaInvisCD;
+                __instance.Value = CustomGameOptions.NinjaInvisCD;
+                __instance.ValueText.Text = CustomGameOptions.NinjaInvisCD.ToString();
                 return false;
             }
 
@@ -126,12 +126,12 @@ namespace NinjaMod
         {
             if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaCooldown.TitleText.Text)
             {
-                CustomGameOptions.NinjaKillCD = Math.Max(CustomGameOptions.NinjaKillCD - 2.5f, 10);
+                CustomGameOptions.NinjaInvisCD = Math.Max(CustomGameOptions.NinjaInvisCD - 2.5f, 10);
 
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
-                __instance.oldValue = CustomGameOptions.NinjaKillCD;
-                __instance.Value = CustomGameOptions.NinjaKillCD;
-                __instance.ValueText.Text = CustomGameOptions.NinjaKillCD.ToString();
+                __instance.oldValue = CustomGameOptions.NinjaInvisCD;
+                __instance.Value = CustomGameOptions.NinjaInvisCD;
+                __instance.ValueText.Text = CustomGameOptions.NinjaInvisCD.ToString();
                 
                 return false;
             }
