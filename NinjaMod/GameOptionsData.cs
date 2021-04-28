@@ -10,7 +10,7 @@ namespace NinjaMod
     public static class GameOptionsMenuPatch
     {
         public static ToggleOption ShowNinjaOption;
-        public static NumberOption NinjaCooldown;
+        public static NumberOption NinjaInvisCooldown;
         public static float LowestY;
 
         static float GetLowestConfigY(GameOptionsMenu __instance)
@@ -63,11 +63,11 @@ namespace NinjaMod
                 System.Collections.Generic.List<OptionBehaviour> NewOptions = __instance.Children.ToList();
 
                 ShowNinjaOption = PrepareToggle(__instance, "Show Ninja", CustomGameOptions.ShowNinja);
-                NinjaCooldown =
-                    PrepareNumberOption(__instance, "Ninja Kill Cooldown", CustomGameOptions.NinjaInvisCD);
+                NinjaInvisCooldown =
+                    PrepareNumberOption(__instance, "Ninja Invisibility Cooldown", CustomGameOptions.NinjaInvisCD);
                 
                 NewOptions.Add(ShowNinjaOption);
-                NewOptions.Add(NinjaCooldown);
+                NewOptions.Add(NinjaInvisCooldown);
                 
                 __instance.GetComponentInParent<Scroller>().YBounds.max +=
                     0.5f * (NewOptions.Count - __instance.Children.Count);
@@ -107,7 +107,7 @@ namespace NinjaMod
         [HarmonyPatch(nameof(NumberOption.Increase))]
         public static bool Prefix1(NumberOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaCooldown.TitleText.Text)
+            if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaInvisCooldown.TitleText.Text)
             {
                 CustomGameOptions.NinjaInvisCD = Math.Min(CustomGameOptions.NinjaInvisCD + 2.5f, 45);
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
@@ -124,7 +124,7 @@ namespace NinjaMod
         [HarmonyPatch(nameof(NumberOption.Decrease))]
         public static bool Prefix2(NumberOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaCooldown.TitleText.Text)
+            if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaInvisCooldown.TitleText.Text)
             {
                 CustomGameOptions.NinjaInvisCD = Math.Max(CustomGameOptions.NinjaInvisCD - 2.5f, 10);
 
