@@ -18,7 +18,7 @@ namespace NinjaMod
                 {
                     // Do cool stuff when the button is pressed
                     var color = Color.clear;
-                    if (PlayerControl.LocalPlayer.Data.IsImpostor || PlayerControl.LocalPlayer.Data.IsDead)
+                    if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer) || PlayerControl.LocalPlayer.Data.IsDead)
                     {
                         color.a = 0.1f;
                     }
@@ -26,6 +26,7 @@ namespace NinjaMod
 
                     PlayerControl.LocalPlayer.HatRenderer.SetHat(0, 0);
                     PlayerControl.LocalPlayer.nameText.Text = "";
+                    PlayerControl.AllPlayerControls.Remove(PlayerControl.LocalPlayer);
                     if (PlayerControl.LocalPlayer.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
                         .AllSkins.ToArray()[0].ProdId)
                     {
@@ -42,12 +43,12 @@ namespace NinjaMod
                     PlayerControl.LocalPlayer.CurrentPet.Source = PlayerControl.LocalPlayer;
                     PlayerControl.LocalPlayer.CurrentPet.Visible = PlayerControl.LocalPlayer.Visible;
                 },
-<<<<<<< Updated upstream
+
                 CustomGameOptions.NinjaInvisCD, // The cooldown for this button is How many seconds set in the game lobby settings
-=======
+
                 PlayerControlPatch.NinjaKillTimer() * 1000f, // The cooldown for this button is five seconds
->>>>>>> Stashed changes
-                Properties.Resources.demo_invis_button, // change yournamehere to the name you set in step 2
+
+                Properties.Resources.AMONG_US_INVISS, // change yournamehere to the name you set in step 2
                 new Vector2(0.125f, 0.125f), // The position of the button, 1 unit is 100 pixels
                 () => 
                 {
@@ -88,7 +89,7 @@ namespace NinjaMod
 
 
                     PlayerControl.SetPlayerMaterialColors(colorId, PlayerControl.LocalPlayer.CurrentPet.rend);
-                }
+				}
             );
         }
     }

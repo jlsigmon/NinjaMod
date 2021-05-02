@@ -48,7 +48,7 @@ namespace Reactor.Button
         public HudManager HudManager;
         public bool CanUse_;
 
-        public CooldownButton(Action onClick, float cooldown, byte[] image, Vector2 positionOffset, Func<bool> useTester, HudManager hudManager, float effectDuration, Action onEffectEnd)
+        public CooldownButton(Action onClick, float cooldown, float v, byte[] image, Vector2 positionOffset, Func<bool> useTester, HudManager hudManager, float effectDuration, Action onEffectEnd)
         {
             SetVars(onClick, cooldown, image, positionOffset, useTester, hudManager);
             this.HasEffectDuration = true;

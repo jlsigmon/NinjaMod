@@ -63,6 +63,16 @@ namespace NinjaMod.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] AMONG_US_INVISS {
+            get {
+                object obj = ResourceManager.GetObject("AMONG_US_INVISS", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] demo_invis_button {
             get {
                 object obj = ResourceManager.GetObject("demo_invis_button", resourceCulture);

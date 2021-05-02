@@ -36,7 +36,7 @@ namespace NinjaMod
                 else
                     __instance.GameSettings.Text = GameSettingsText + "Show Ninja: Off" + "\n";
                 
-                __instance.GameSettings.Text += "Ninja Kill Cooldown: " + CustomGameOptions.NinjaKillCD.ToString() + "s";
+                __instance.GameSettings.Text += "Ninja Invisibility Cooldown: " + CustomGameOptions.NinjaInvisCD.ToString() + "s";
             }
 
         }
@@ -98,11 +98,11 @@ namespace NinjaMod
             }
             counter = 0;
 
-            if (GameOptionsMenuPatch.ShowNinjaOption != null && GameOptionsMenuPatch.NinjaCooldown!=null)
+            if (GameOptionsMenuPatch.ShowNinjaOption != null && GameOptionsMenuPatch.NinjaInvisCooldown!=null)
             {
                 var isOptionsMenuActive = GameObject.FindObjectsOfType<GameOptionsMenu>().Count != 0;
                 GameOptionsMenuPatch.ShowNinjaOption.gameObject.SetActive(isOptionsMenuActive);
-                GameOptionsMenuPatch.NinjaCooldown.gameObject.SetActive(isOptionsMenuActive);
+                GameOptionsMenuPatch.NinjaInvisCooldown.gameObject.SetActive(isOptionsMenuActive);
             }
         }
 

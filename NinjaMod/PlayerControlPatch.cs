@@ -13,7 +13,7 @@ namespace NinjaMod
 
         SetNinja = 40,
         SyncCustomSettings = 41,
-        NinjaKill = 42
+        NinjaInvis = 42
 
     }
     enum RPC
@@ -95,7 +95,7 @@ namespace NinjaMod
                             break;
                         }
                     
-                    case (byte)CustomRPC.NinjaKill:
+                    case (byte)CustomRPC.NinjaInvis:
                         {
                             PlayerControl killer = getPlayerById(reader.ReadByte());
                             PlayerControl target = getPlayerById(reader.ReadByte());
