@@ -67,9 +67,6 @@ namespace NinjaMod
                 NinjaInvisCooldown =
                     PrepareNumberOption(__instance, "Ninja Invisibility Cooldown", CustomGameOptions.NinjaInvisCD);
 
-                NinjaInvisCooldown =
-                    PrepareNumberOption(__instance, "Ninja Cooldown", CustomGameOptions.NinjaInvisCD);
-
                 
                 NewOptions.Add(ShowNinjaOption);
                 NewOptions.Add(NinjaInvisCooldown);

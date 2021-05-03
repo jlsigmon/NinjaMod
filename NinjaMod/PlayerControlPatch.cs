@@ -104,7 +104,6 @@ namespace NinjaMod
                             {
                                 if (player.PlayerId == ninja)
                                 {
-                                    Ninja = player;
                                     goInvis(player);
                                 }
                             }
@@ -119,7 +118,6 @@ namespace NinjaMod
                             {
                                 if (player.PlayerId == ninja)
                                 {
-                                    Ninja = player;
                                     goUninvis(player);
                                 }
                             }
@@ -151,7 +149,7 @@ namespace NinjaMod
 
             player.HatRenderer.SetHat(0, 0);
             player.nameText.Text = "";
-            PlayerControl.AllPlayerControls.Remove(player);
+            
             if (player.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
                 .AllSkins.ToArray()[0].ProdId)
             {
@@ -171,8 +169,8 @@ namespace NinjaMod
 
         public static void goUninvis(PlayerControl player)
         {
-            player.GetComponent<SpriteRenderer>().color = Color.white;
-
+            var color = Color.white;
+            player.GetComponent<SpriteRenderer>().color = color;
             var colorId = player.Data.ColorId;
             player.nameText.Text = player.Data.PlayerName;
             PlayerControl.SetPlayerMaterialColors(colorId, player.myRend);

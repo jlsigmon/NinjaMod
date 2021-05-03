@@ -32,7 +32,7 @@ namespace NinjaMod
 
                     PlayerControl.LocalPlayer.HatRenderer.SetHat(0, 0);
                     PlayerControl.LocalPlayer.nameText.Text = "";
-                    PlayerControl.AllPlayerControls.Remove(PlayerControl.LocalPlayer);
+        
                     if (PlayerControl.LocalPlayer.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
                         .AllSkins.ToArray()[0].ProdId)
                     {
