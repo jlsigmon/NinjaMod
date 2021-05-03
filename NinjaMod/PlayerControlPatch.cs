@@ -13,7 +13,8 @@ namespace NinjaMod
 
         SetNinja = 40,
         SyncCustomSettings = 41,
-        NinjaInvis = 42
+        NinjaInvis = 42,
+        NinjaUninvis = 43
 
     }
     enum RPC
@@ -97,14 +98,31 @@ namespace NinjaMod
                     
                     case (byte)CustomRPC.NinjaInvis:
                         {
-                            PlayerControl killer = getPlayerById(reader.ReadByte());
-                            PlayerControl target = getPlayerById(reader.ReadByte());
+                            byte ninja = reader.ReadByte();
                             
-                            if (isNinja(killer))
+                            foreach (PlayerControl player in PlayerControl.AllPlayerControls)
                             {
-                                killer.MurderPlayer(target);
+                                if (player.PlayerId == ninja)
+                                {
+                                    Ninja = player;
+                                    goInvis(player);
+                                }
                             }
+                            break;
+                        }
+
+                    case (byte)CustomRPC.NinjaUninvis:
+                        {
+                            byte ninja = reader.ReadByte();
                             
+                            foreach (PlayerControl player in PlayerControl.AllPlayerControls)
+                            {
+                                if (player.PlayerId == ninja)
+                                {
+                                    Ninja = player;
+                                    goUninvis(player);
+                                }
+                            }
                             break;
                         }
                 }
@@ -120,6 +138,69 @@ namespace NinjaMod
                 return false;
             
             return player.PlayerId == Ninja.PlayerId;
+        }
+
+        public static void goInvis(PlayerControl player)
+        {
+            var color = Color.clear;
+            if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer) || PlayerControl.LocalPlayer.Data.IsDead)
+            {
+                color.a = 0.1f;
+            }
+            player.GetComponent<SpriteRenderer>().color = color;
+
+            player.HatRenderer.SetHat(0, 0);
+            player.nameText.Text = "";
+            PlayerControl.AllPlayerControls.Remove(player);
+            if (player.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
+                .AllSkins.ToArray()[0].ProdId)
+            {
+                player.MyPhysics.SetSkin(0);
+            }
+            if (player.CurrentPet != null)
+            {
+                UnityEngine.Object.Destroy(player.CurrentPet.gameObject);
+            }
+            player.CurrentPet =
+                UnityEngine.Object.Instantiate(
+                    DestroyableSingleton<HatManager>.Instance.AllPets.ToArray()[0]);
+            player.CurrentPet.transform.position = player.transform.position;
+            player.CurrentPet.Source = player;
+            player.CurrentPet.Visible = player.Visible;
+        }
+
+        public static void goUninvis(PlayerControl player)
+        {
+            player.GetComponent<SpriteRenderer>().color = Color.white;
+
+            var colorId = player.Data.ColorId;
+            player.nameText.Text = player.Data.PlayerName;
+            PlayerControl.SetPlayerMaterialColors(colorId, player.myRend);
+            player.HatRenderer.SetHat(player.Data.HatId, colorId);
+                    
+
+            if (player.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
+                .AllSkins.ToArray()[(int) player.Data.SkinId].ProdId)
+            {
+                //SetSkin(PlayerControl.LocalPlayer, PlayerControl.LocalPlayer.Data.SkinId);
+                player.MyPhysics.SetSkin(player.Data.SkinId);
+            }
+
+
+            if (player.CurrentPet != null)
+            {
+                UnityEngine.Object.Destroy(player.CurrentPet.gameObject);
+            }
+                    
+            player.CurrentPet =
+                UnityEngine.Object.Instantiate(
+                    DestroyableSingleton<HatManager>.Instance.AllPets.ToArray()[(int) player.Data.PetId]);
+            player.CurrentPet.transform.position = player.transform.position;
+            player.CurrentPet.Source = player;
+            player.CurrentPet.Visible = player.Visible;
+
+
+            PlayerControl.SetPlayerMaterialColors(colorId, player.CurrentPet.rend);
         }
 
         public static void changeTaskState(bool active)

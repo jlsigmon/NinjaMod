@@ -3,6 +3,9 @@ using Reactor.Unstrip;
 using Reactor.Button;
 using UnityEngine;
 using HarmonyLib;
+using Hazel;
+using Il2CppSystem.Reflection;
+using System;
 namespace NinjaMod
 {
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Start))]
@@ -17,6 +20,9 @@ namespace NinjaMod
                 () =>
                 {
                     // Do cool stuff when the button is pressed
+                    MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.NinjaInvis, Hazel.SendOption.None, -1);
+                    writer.Write(PlayerControl.LocalPlayer.PlayerId);
+                    AmongUsClient.Instance.FinishRpcImmediately(writer);
                     var color = Color.clear;
                     if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer) || PlayerControl.LocalPlayer.Data.IsDead)
                     {
@@ -59,6 +65,9 @@ namespace NinjaMod
                 10f,
                 () =>
                 {
+                    MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.NinjaUninvis, Hazel.SendOption.None, -1);
+                    writer.Write(PlayerControl.LocalPlayer.PlayerId);
+                    AmongUsClient.Instance.FinishRpcImmediately(writer);
                     PlayerControl.LocalPlayer.GetComponent<SpriteRenderer>().color = Color.white;
 
                     var colorId = PlayerControl.LocalPlayer.Data.ColorId;
@@ -77,11 +86,11 @@ namespace NinjaMod
 
                     if (PlayerControl.LocalPlayer.CurrentPet != null)
                     {
-                        Object.Destroy(PlayerControl.LocalPlayer.CurrentPet.gameObject);
+                        UnityEngine.Object.Destroy(PlayerControl.LocalPlayer.CurrentPet.gameObject);
                     }
-
+                    
                     PlayerControl.LocalPlayer.CurrentPet =
-                        Object.Instantiate(
+                        UnityEngine.Object.Instantiate(
                             DestroyableSingleton<HatManager>.Instance.AllPets.ToArray()[(int) PlayerControl.LocalPlayer.Data.PetId]);
                     PlayerControl.LocalPlayer.CurrentPet.transform.position = PlayerControl.LocalPlayer.transform.position;
                     PlayerControl.LocalPlayer.CurrentPet.Source = PlayerControl.LocalPlayer;
