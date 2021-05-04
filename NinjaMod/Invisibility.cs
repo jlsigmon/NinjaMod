@@ -54,7 +54,7 @@ namespace NinjaMod
 
                 PlayerControlPatch.NinjaKillTimer() * 1000f, // The cooldown for this button is five seconds
 
-                Properties.Resources.AMONG_US_INVISS, // change yournamehere to the name you set in step 2
+                Properties.Resources.AMONG_US_INVISSobilitusBobile, // change yournamehere to the name you set in step 2
                 new Vector2(0.125f, 0.125f), // The position of the button, 1 unit is 100 pixels
                 () => 
                 {

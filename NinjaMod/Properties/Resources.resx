@@ -121,7 +121,10 @@
   <data name="AMONG_US_INVISS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AMONG US INVISS.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="demo_invis_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\demo invis button.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="AMONG_US_INVISSobilitusBobile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AMONG US INVISSobilitusBobile.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="New invis button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New invis button.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
