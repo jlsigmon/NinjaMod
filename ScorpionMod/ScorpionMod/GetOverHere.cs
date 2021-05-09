@@ -32,7 +32,7 @@ namespace ScorpionMod
                     PlayerControlPatch.lastKilled = DateTime.UtcNow;
                 },
 
-                PlayerControlPatch.ScorpionKillTimer() * 1000f, // The cooldown for this button is five seconds
+                30f, // The cooldown for this button is five seconds
 
                 Properties.Resources.killbutton, // change yournamehere to the name you set in step 2
                 new Vector2(0.125f, 0.125f), // The position of the button, 1 unit is 100 pixels

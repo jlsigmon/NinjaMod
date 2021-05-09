@@ -11,7 +11,7 @@ namespace ScorpionMod
     [BepInDependency(ReactorPlugin.Id)]
     public class ScorpionMod : BasePlugin
     {
-        public const string Id = "me.change.please";
+        public const string Id = "scorpion.mod";
 
         public Harmony Harmony { get; } = new Harmony(Id);
 

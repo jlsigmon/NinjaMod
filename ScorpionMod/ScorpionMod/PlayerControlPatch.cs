@@ -11,9 +11,9 @@ namespace ScorpionMod
     enum CustomRPC
     {
 
-        SetScorpion = 40,
-        SyncCustomSettings = 41,
-        ScorpionKill = 42
+        SetScorpion = 50,
+        SyncCustomSettings = 51,
+        ScorpionKill = 52
     }
     enum RPC
     {
@@ -79,7 +79,7 @@ namespace ScorpionMod
                                     Scorpion = player;
                                     if (CustomGameOptions.ShowScorpion)
                                     {
-                                        player.nameText.Color = new Color((float)0.5, (float)0.5, (float)0.5, 1);
+                                        player.nameText.Color = new Color((float)1, (float)0.92, (float)0.016, 1);
                                     }
                                 }
                             }

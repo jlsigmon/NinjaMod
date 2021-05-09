@@ -36,7 +36,7 @@ namespace ScorpionMod
                 else
                     __instance.GameSettings.Text = GameSettingsText + "Show Scorpion: Off" + "\n";
                 
-                __instance.GameSettings.Text += "Scorpion Invisibility Cooldown: " + CustomGameOptions.ScorpionInvisCD.ToString() + "s";
+                __instance.GameSettings.Text += "Scorpion Kill Cooldown: " + CustomGameOptions.ScorpionInvisCD.ToString() + "s";
             }
 
         }
@@ -60,7 +60,7 @@ namespace ScorpionMod
                 {
                     if (CustomGameOptions.ShowScorpion | PlayerControlPatch.isScorpion(PlayerControl.LocalPlayer))
                     {
-                        playerVoteArea.NameText.Color = new Color((float)(0.5), (float)(0.5), (float)(0.5), 1);
+                        playerVoteArea.NameText.Color = new Color((float)1, (float)0.92, (float)0.016, 1);
                     }
                 }
             }
@@ -84,12 +84,10 @@ namespace ScorpionMod
                 if (PlayerControlPatch.isScorpion(PlayerControl.LocalPlayer))
                 {
 
-                    PlayerControl.LocalPlayer.nameText.Color = new Color((float)(0.5), (float)(0.5), (float)(0.5), 1);
-                    
-                    
-                    
+                    PlayerControl.LocalPlayer.nameText.Color = new Color((float)1, (float)0.92, (float)0.016, 1);
                 }
             }
+            PlayerControlPatch.closestPlayer = PlayerControlPatch.getClosestPlayer(PlayerControl.LocalPlayer);
 
             if (counter < 30)
             {

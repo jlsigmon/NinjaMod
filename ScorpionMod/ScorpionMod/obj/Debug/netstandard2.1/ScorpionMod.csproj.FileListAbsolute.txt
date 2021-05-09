@@ -15,3 +15,16 @@ C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\Scorpion
 C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CopyComplete
 C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.dll
 C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.pdb
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\ScorpionMod.deps.json
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\ScorpionMod.dll
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\ScorpionMod.pdb
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\Reactor-2021.3.31.3s.dll
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csprojAssemblyReference.cache
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.Properties.Resources.resources
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.GenerateResource.cache
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfoInputs.cache
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfo.cs
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CoreCompileInputs.cache
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CopyComplete
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.dll
+D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.pdb
