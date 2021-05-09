@@ -19,19 +19,22 @@ namespace ScorpionMod
             btn = new CooldownButton(
                 () =>
                 {
-                    // Do cool stuff when the button is pressed
-                    MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.ScorpionKill, Hazel.SendOption.None, -1);
-                    writer.Write(PlayerControl.LocalPlayer.PlayerId);
-                    writer.Write(PlayerControlPatch.closestPlayer.PlayerId);
-                    AmongUsClient.Instance.FinishRpcImmediately(writer);
-                    PlayerControl.LocalPlayer.MurderPlayer(PlayerControlPatch.closestPlayer);
+                    var dist = PlayerControlPatch.getDistBetweenPlayers(PlayerControl.LocalPlayer, PlayerControlPatch.closestPlayer);
+                     if (dist < GameOptionsData.KillDistances[PlayerControl.GameOptions.KillDistance])
+                    {
+                        // Do cool stuff when the button is pressed
+                        MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.ScorpionKill, Hazel.SendOption.None, -1);
+                        writer.Write(PlayerControl.LocalPlayer.PlayerId);
+                        writer.Write(PlayerControlPatch.closestPlayer.PlayerId);
+                        AmongUsClient.Instance.FinishRpcImmediately(writer);
+                        PlayerControl.LocalPlayer.MurderPlayer(PlayerControlPatch.closestPlayer);
+                    }
+                    PlayerControlPatch.lastKilled = DateTime.UtcNow;
                 },
-
-                CustomGameOptions.ScorpionInvisCD, // The cooldown for this button is How many seconds set in the game lobby settings
 
                 PlayerControlPatch.ScorpionKillTimer() * 1000f, // The cooldown for this button is five seconds
 
-                Properties.Resources.AMONG_US_INVISSobilitusBobile, // change yournamehere to the name you set in step 2
+                Properties.Resources.killbutton, // change yournamehere to the name you set in step 2
                 new Vector2(0.125f, 0.125f), // The position of the button, 1 unit is 100 pixels
                 () => 
                 {
