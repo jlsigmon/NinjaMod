@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 
 
-namespace NinjaMod
+namespace ScorpionMod
 {
     class PlayerController
     {
@@ -41,11 +41,11 @@ namespace NinjaMod
             return null;
         }
         
-        public static Player getNinja()
+        public static Player getScorpion()
         {
             foreach (Player player in players)
             {
-                if (player.isNinja)
+                if (player.isScorpion)
                 {
                     return player;
                 }

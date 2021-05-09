@@ -6,16 +6,14 @@ using System.Linq;
 using UnhollowerBaseLib;
 using UnityEngine;
 
-namespace NinjaMod
+namespace ScorpionMod
 {
     enum CustomRPC
     {
 
-        SetNinja = 40,
+        SetScorpion = 40,
         SyncCustomSettings = 41,
-        NinjaInvis = 42,
-        NinjaUninvis = 43
-
+        ScorpionKill = 42
     }
     enum RPC
     {
@@ -59,9 +57,9 @@ namespace NinjaMod
     public static class PlayerControlPatch
     {
         public static PlayerControl closestPlayer = null;
-        public static PlayerControl Ninja;
-        public static bool NinjaInTask;
-        public static bool NinjaInAdmin;
+        public static PlayerControl Scorpion;
+        public static bool ScorpionInTask;
+        public static bool ScorpionInAdmin;
         public static DateTime lastKilled;
         
         [HarmonyPatch(nameof(PlayerControl.HandleRpc))]
@@ -71,15 +69,15 @@ namespace NinjaMod
             {
                 switch (callId)
                 {
-                    case (byte)CustomRPC.SetNinja:
+                    case (byte)CustomRPC.SetScorpion:
                         {
-                            byte NinjaId = reader.ReadByte();
+                            byte ScorpionId = reader.ReadByte();
                             foreach (PlayerControl player in PlayerControl.AllPlayerControls)
                             {
-                                if (player.PlayerId == NinjaId)
+                                if (player.PlayerId == ScorpionId)
                                 {
-                                    Ninja = player;
-                                    if (CustomGameOptions.ShowNinja)
+                                    Scorpion = player;
+                                    if (CustomGameOptions.ShowScorpion)
                                     {
                                         player.nameText.Color = new Color((float)0.5, (float)0.5, (float)0.5, 1);
                                     }
@@ -91,129 +89,52 @@ namespace NinjaMod
                     
                     case (byte)CustomRPC.SyncCustomSettings:
                         {
-                            CustomGameOptions.ShowNinja = reader.ReadBoolean();
-                            CustomGameOptions.NinjaInvisCD = BitConverter.ToSingle(reader.ReadBytes(4).ToArray(), 0);
+                            CustomGameOptions.ShowScorpion = reader.ReadBoolean();
+                            CustomGameOptions.ScorpionInvisCD = BitConverter.ToSingle(reader.ReadBytes(4).ToArray(), 0);
                             break;
                         }
                     
-                    case (byte)CustomRPC.NinjaInvis:
+                    case (byte)CustomRPC.ScorpionKill:
                         {
-                            byte ninja = reader.ReadByte();
+                            PlayerControl Scorpion = getPlayerById(reader.ReadByte());
+                            PlayerControl target = getPlayerById(reader.ReadByte());
                             
-                            foreach (PlayerControl player in PlayerControl.AllPlayerControls)
+                            if(isScorpion(Scorpion))
                             {
-                                if (player.PlayerId == ninja)
-                                {
-                                    goInvis(player);
-                                }
+                                Scorpion.MurderPlayer(target);
                             }
+                            
                             break;
                         }
 
-                    case (byte)CustomRPC.NinjaUninvis:
-                        {
-                            byte ninja = reader.ReadByte();
-                            
-                            foreach (PlayerControl player in PlayerControl.AllPlayerControls)
-                            {
-                                if (player.PlayerId == ninja)
-                                {
-                                    goUninvis(player);
-                                }
-                            }
-                            break;
-                        }
                 }
             }
             catch {
-                NinjaMod.log.LogInfo("RPC error... possible reasons: Not all players in the lobby have installed the mod or Ninja mod versions do not match");
+                ScorpionMod.log.LogInfo("RPC error... possible reasons: Not all players in the lobby have installed the mod or Scorpion mod versions do not match");
             }
         }
 
-        public static bool isNinja(PlayerControl player)
+        public static bool isScorpion(PlayerControl player)
         {
-            if (Ninja == null)
+            if (Scorpion == null)
                 return false;
             
-            return player.PlayerId == Ninja.PlayerId;
-        }
-
-        public static void goInvis(PlayerControl player)
-        {
-            var color = Color.clear;
-            if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer) || PlayerControl.LocalPlayer.Data.IsDead)
-            {
-                color.a = 0.1f;
-            }
-            player.GetComponent<SpriteRenderer>().color = color;
-
-            player.HatRenderer.SetHat(0, 0);
-            player.nameText.Text = "";
-            
-            if (player.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
-                .AllSkins.ToArray()[0].ProdId)
-            {
-                player.MyPhysics.SetSkin(0);
-            }
-            if (player.CurrentPet != null)
-            {
-                UnityEngine.Object.Destroy(player.CurrentPet.gameObject);
-            }
-            player.CurrentPet =
-                UnityEngine.Object.Instantiate(
-                    DestroyableSingleton<HatManager>.Instance.AllPets.ToArray()[0]);
-            player.CurrentPet.transform.position = player.transform.position;
-            player.CurrentPet.Source = player;
-            player.CurrentPet.Visible = player.Visible;
-        }
-
-        public static void goUninvis(PlayerControl player)
-        {
-            var color = Color.white;
-            player.GetComponent<SpriteRenderer>().color = color;
-            var colorId = player.Data.ColorId;
-            player.nameText.Text = player.Data.PlayerName;
-            PlayerControl.SetPlayerMaterialColors(colorId, player.myRend);
-            player.HatRenderer.SetHat(player.Data.HatId, colorId);
-                    
-
-            if (player.MyPhysics.Skin.skin.ProdId != DestroyableSingleton<HatManager>.Instance
-                .AllSkins.ToArray()[(int) player.Data.SkinId].ProdId)
-            {
-                //SetSkin(PlayerControl.LocalPlayer, PlayerControl.LocalPlayer.Data.SkinId);
-                player.MyPhysics.SetSkin(player.Data.SkinId);
-            }
-
-
-            if (player.CurrentPet != null)
-            {
-                UnityEngine.Object.Destroy(player.CurrentPet.gameObject);
-            }
-                    
-            player.CurrentPet =
-                UnityEngine.Object.Instantiate(
-                    DestroyableSingleton<HatManager>.Instance.AllPets.ToArray()[(int) player.Data.PetId]);
-            player.CurrentPet.transform.position = player.transform.position;
-            player.CurrentPet.Source = player;
-            player.CurrentPet.Visible = player.Visible;
-
-
-            PlayerControl.SetPlayerMaterialColors(colorId, player.CurrentPet.rend);
+            return player.PlayerId == Scorpion.PlayerId;
         }
 
         public static void changeTaskState(bool active)
         {
-            if (isNinja(PlayerControl.LocalPlayer) && NinjaInTask != active)
+            if (isScorpion(PlayerControl.LocalPlayer) && ScorpionInTask != active)
             {
-                NinjaInTask = active;
+                ScorpionInTask = active;
             }
         }
 
         public static void changeAdminState(bool active)
         {
-            if (isNinja(PlayerControl.LocalPlayer) && NinjaInAdmin != active)
+            if (isScorpion(PlayerControl.LocalPlayer) && ScorpionInAdmin != active)
             {
-                NinjaInAdmin = active;
+                ScorpionInAdmin = active;
             }
         }
 
@@ -229,14 +150,14 @@ namespace NinjaMod
             
             return null;
         }
-        public static float NinjaKillTimer()
+        public static float ScorpionKillTimer()
         {
             if (lastKilled == null)
                 return 0;
             
             DateTime now = DateTime.UtcNow;
             TimeSpan diff = now - lastKilled;
-            var KillCoolDown = CustomGameOptions.NinjaInvisCD * 1000.0f;
+            var KillCoolDown = CustomGameOptions.ScorpionInvisCD * 1000.0f;
             
             if (KillCoolDown - (float)diff.TotalMilliseconds < 0)
                 return 0;
@@ -308,20 +229,20 @@ namespace NinjaMod
         [HarmonyPatch(nameof(PlayerControl.RpcSetInfected))]
         public static void Postfix([HarmonyArgument(0)] Il2CppReferenceArray<GameData.PlayerInfo> PlayerInfos)
         {
-            MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SetNinja, Hazel.SendOption.None, -1);
+            MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SetScorpion, Hazel.SendOption.None, -1);
             List<PlayerControl> crewmates = getCrewMates(PlayerInfos);
             
             System.Random r = new System.Random();
-            Ninja = crewmates[r.Next(0, crewmates.Count)];
+            Scorpion = crewmates[r.Next(0, crewmates.Count)];
             
-            if (CustomGameOptions.ShowNinja)
+            if (CustomGameOptions.ShowScorpion)
             {
-                Ninja.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
+                Scorpion.nameText.Color = new Color(1, (float)(204.0 / 255.0), 0, 1);
             }
             
-            byte NinjaId = Ninja.PlayerId;
+            byte ScorpionId = Scorpion.PlayerId;
 
-            writer.Write(NinjaId);
+            writer.Write(ScorpionId);
 
             AmongUsClient.Instance.FinishRpcImmediately(writer);
         }
@@ -329,9 +250,9 @@ namespace NinjaMod
         [HarmonyPatch(nameof(PlayerControl.MurderPlayer))]
         public static bool Prefix(PlayerControl __instance)
         {
-            if (Ninja != null)
+            if (Scorpion != null)
             {
-                if (__instance.PlayerId == Ninja.PlayerId)
+                if (__instance.PlayerId == Scorpion.PlayerId)
                 {
                     __instance.Data.IsImpostor = true;
 
@@ -343,9 +264,9 @@ namespace NinjaMod
         [HarmonyPatch(nameof(PlayerControl.MurderPlayer))]
         public static void Postfix(PlayerControl __instance)
         {
-            if (Ninja != null)
+            if (Scorpion != null)
             {
-                if (__instance.PlayerId == Ninja.PlayerId)
+                if (__instance.PlayerId == Scorpion.PlayerId)
                 {
                     __instance.Data.IsImpostor = false;
                 }
@@ -359,8 +280,8 @@ namespace NinjaMod
             {
                 MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.SyncCustomSettings, Hazel.SendOption.None, -1);
 
-                writer.Write(CustomGameOptions.ShowNinja);
-                writer.Write(CustomGameOptions.NinjaInvisCD);
+                writer.Write(CustomGameOptions.ShowScorpion);
+                writer.Write(CustomGameOptions.ScorpionInvisCD);
                 
                 AmongUsClient.Instance.FinishRpcImmediately(writer);
             }

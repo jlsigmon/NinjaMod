@@ -1,21 +1,21 @@
 using UnityEngine;
 
-namespace NinjaMod
+namespace ScorpionMod
 {
     public class Player
     {
         public PlayerControl playerdata;
-        public bool isNinja;
+        public bool isScorpion;
 
         public Player(PlayerControl playerdata)
         {
             this.playerdata = playerdata;
-            isNinja = false;
+            isScorpion = false;
         }
         
         public void Update()
         {
-            if (isNinja & (CustomGameOptions.ShowNinja | this == PlayerController.getLocalPlayer()))
+            if (isScorpion & (CustomGameOptions.ShowScorpion | this == PlayerController.getLocalPlayer()))
             {
                 playerdata.nameText.Color = new Color(48 / 255.0f, 223 / 255.0f, 48 / 255.0f);
             }

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 
-namespace NinjaMod
+namespace ScorpionMod
 {
     [HarmonyPatch(typeof(HudManager))]
     public static class HudManagerPatch
@@ -31,12 +31,12 @@ namespace NinjaMod
             
             if (GameSettingsText != null)
             {
-                if (CustomGameOptions.ShowNinja)
-                    __instance.GameSettings.Text = GameSettingsText + "Show Ninja: On" + "\n";
+                if (CustomGameOptions.ShowScorpion)
+                    __instance.GameSettings.Text = GameSettingsText + "Show Scorpion: On" + "\n";
                 else
-                    __instance.GameSettings.Text = GameSettingsText + "Show Ninja: Off" + "\n";
+                    __instance.GameSettings.Text = GameSettingsText + "Show Scorpion: Off" + "\n";
                 
-                __instance.GameSettings.Text += "Ninja Invisibility Cooldown: " + CustomGameOptions.NinjaInvisCD.ToString() + "s";
+                __instance.GameSettings.Text += "Scorpion Invisibility Cooldown: " + CustomGameOptions.ScorpionInvisCD.ToString() + "s";
             }
 
         }
@@ -56,9 +56,9 @@ namespace NinjaMod
         {
             foreach (PlayerVoteArea playerVoteArea in __instance.playerStates)
             {
-                if (PlayerControlPatch.Ninja != null && playerVoteArea.NameText.Text == PlayerControlPatch.Ninja.name)
+                if (PlayerControlPatch.Scorpion != null && playerVoteArea.NameText.Text == PlayerControlPatch.Scorpion.name)
                 {
-                    if (CustomGameOptions.ShowNinja | PlayerControlPatch.isNinja(PlayerControl.LocalPlayer))
+                    if (CustomGameOptions.ShowScorpion | PlayerControlPatch.isScorpion(PlayerControl.LocalPlayer))
                     {
                         playerVoteArea.NameText.Color = new Color((float)(0.5), (float)(0.5), (float)(0.5), 1);
                     }
@@ -79,9 +79,9 @@ namespace NinjaMod
 
             UpdateGameSettingsText(__instance);
       
-            if (PlayerControl.AllPlayerControls.Count > 1 & PlayerControlPatch.Ninja != null)
+            if (PlayerControl.AllPlayerControls.Count > 1 & PlayerControlPatch.Scorpion != null)
             {
-                if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer))
+                if (PlayerControlPatch.isScorpion(PlayerControl.LocalPlayer))
                 {
 
                     PlayerControl.LocalPlayer.nameText.Color = new Color((float)(0.5), (float)(0.5), (float)(0.5), 1);
@@ -98,11 +98,11 @@ namespace NinjaMod
             }
             counter = 0;
 
-            if (GameOptionsMenuPatch.ShowNinjaOption != null && GameOptionsMenuPatch.NinjaInvisCooldown!=null)
+            if (GameOptionsMenuPatch.ShowScorpionOption != null && GameOptionsMenuPatch.ScorpionInvisCooldown!=null)
             {
                 var isOptionsMenuActive = GameObject.FindObjectsOfType<GameOptionsMenu>().Count != 0;
-                GameOptionsMenuPatch.ShowNinjaOption.gameObject.SetActive(isOptionsMenuActive);
-                GameOptionsMenuPatch.NinjaInvisCooldown.gameObject.SetActive(isOptionsMenuActive);
+                GameOptionsMenuPatch.ShowScorpionOption.gameObject.SetActive(isOptionsMenuActive);
+                GameOptionsMenuPatch.ScorpionInvisCooldown.gameObject.SetActive(isOptionsMenuActive);
             }
         }
 

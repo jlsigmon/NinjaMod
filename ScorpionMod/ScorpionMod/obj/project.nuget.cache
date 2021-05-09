@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4RqKuqcw30xdLidh01JyWLRmzcpsnkr6OECfhaLtCfCu1o2b+s/l11T1DnKjMr55l23J9x5DpG6wM2ICBhAojQ==",
+  "dgSpecHash": "XBYO1zBmXQDDBGqyHeZVb48/D4N8VMSLL6wVFAWZXG3F+hVPE2ZaNJ4cRfxgaStQBkRNNz+RBTb197V4oYmmIQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Levelup 3\\Documents\\Among Us 4s(working ver)\\NinjaMod\\NinjaMod\\NinjaMod\\NinjaMod.csproj",
+  "projectFilePath": "D:\\Github\\NinjaMod\\ScorpionMod\\ScorpionMod\\ScorpionMod.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Levelup 3\\.nuget\\packages\\reactor.oxygenfilter.msbuild\\0.3.0\\reactor.oxygenfilter.msbuild.0.3.0.nupkg.sha512"
+    "C:\\Users\\19195\\.nuget\\packages\\reactor.oxygenfilter.msbuild\\0.3.0\\reactor.oxygenfilter.msbuild.0.3.0.nupkg.sha512"
   ],
   "logs": []
 }

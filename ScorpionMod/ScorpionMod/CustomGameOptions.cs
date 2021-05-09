@@ -1,9 +1,9 @@
-namespace NinjaMod
+namespace ScorpionMod
 {
     public static class CustomGameOptions
     {
-        public static bool ShowNinja=false;
-        public static float NinjaInvisCD=30.0f;
+        public static bool ShowScorpion=false;
+        public static float ScorpionInvisCD=30.0f;
 
     }
 }

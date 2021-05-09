@@ -4,13 +4,13 @@ using System.Linq;
 using UnhollowerBaseLib;
 using UnityEngine;
 
-namespace NinjaMod
+namespace ScorpionMod
 {
     [HarmonyPatch(typeof(GameOptionsMenu))]
     public static class GameOptionsMenuPatch
     {
-        public static ToggleOption ShowNinjaOption;
-        public static NumberOption NinjaInvisCooldown;
+        public static ToggleOption ShowScorpionOption;
+        public static NumberOption ScorpionInvisCooldown;
         public static float LowestY;
 
         static float GetLowestConfigY(GameOptionsMenu __instance)
@@ -62,14 +62,14 @@ namespace NinjaMod
                 
                 System.Collections.Generic.List<OptionBehaviour> NewOptions = __instance.Children.ToList();
 
-                ShowNinjaOption = PrepareToggle(__instance, "Show Ninja", CustomGameOptions.ShowNinja);
+                ShowScorpionOption = PrepareToggle(__instance, "Show Scorpion", CustomGameOptions.ShowScorpion);
 
-                NinjaInvisCooldown =
-                    PrepareNumberOption(__instance, "Ninja Invisibility Cooldown", CustomGameOptions.NinjaInvisCD);
+                ScorpionInvisCooldown =
+                    PrepareNumberOption(__instance, "Scorpion Kill Cooldown", CustomGameOptions.ScorpionInvisCD);
 
                 
-                NewOptions.Add(ShowNinjaOption);
-                NewOptions.Add(NinjaInvisCooldown);
+                NewOptions.Add(ShowScorpionOption);
+                NewOptions.Add(ScorpionInvisCooldown);
                 
                 __instance.GetComponentInParent<Scroller>().YBounds.max +=
                     0.5f * (NewOptions.Count - __instance.Children.Count);
@@ -86,13 +86,13 @@ namespace NinjaMod
         [HarmonyPatch(nameof(ToggleOption.Toggle))]
         public static bool Prefix(ToggleOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.ShowNinjaOption.TitleText.Text)
+            if (__instance.TitleText.Text == GameOptionsMenuPatch.ShowScorpionOption.TitleText.Text)
             {
-                CustomGameOptions.ShowNinja = !CustomGameOptions.ShowNinja;
+                CustomGameOptions.ShowScorpion = !CustomGameOptions.ShowScorpion;
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
 
-                __instance.oldValue = CustomGameOptions.ShowNinja;
-                __instance.CheckMark.enabled = CustomGameOptions.ShowNinja;
+                __instance.oldValue = CustomGameOptions.ShowScorpion;
+                __instance.CheckMark.enabled = CustomGameOptions.ShowScorpion;
                 
                 return false;
             }
@@ -109,13 +109,13 @@ namespace NinjaMod
         [HarmonyPatch(nameof(NumberOption.Increase))]
         public static bool Prefix1(NumberOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaInvisCooldown.TitleText.Text)
+            if (__instance.TitleText.Text == GameOptionsMenuPatch.ScorpionInvisCooldown.TitleText.Text)
             {
-                CustomGameOptions.NinjaInvisCD = Math.Min(CustomGameOptions.NinjaInvisCD + 2.5f, 45);
+                CustomGameOptions.ScorpionInvisCD = Math.Min(CustomGameOptions.ScorpionInvisCD + 2.5f, 45);
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
-                __instance.oldValue = CustomGameOptions.NinjaInvisCD;
-                __instance.Value = CustomGameOptions.NinjaInvisCD;
-                __instance.ValueText.Text = CustomGameOptions.NinjaInvisCD.ToString();
+                __instance.oldValue = CustomGameOptions.ScorpionInvisCD;
+                __instance.Value = CustomGameOptions.ScorpionInvisCD;
+                __instance.ValueText.Text = CustomGameOptions.ScorpionInvisCD.ToString();
                 return false;
             }
 
@@ -126,14 +126,14 @@ namespace NinjaMod
         [HarmonyPatch(nameof(NumberOption.Decrease))]
         public static bool Prefix2(NumberOption __instance)
         {
-            if (__instance.TitleText.Text == GameOptionsMenuPatch.NinjaInvisCooldown.TitleText.Text)
+            if (__instance.TitleText.Text == GameOptionsMenuPatch.ScorpionInvisCooldown.TitleText.Text)
             {
-                CustomGameOptions.NinjaInvisCD = Math.Max(CustomGameOptions.NinjaInvisCD - 2.5f, 10);
+                CustomGameOptions.ScorpionInvisCD = Math.Max(CustomGameOptions.ScorpionInvisCD - 2.5f, 10);
 
                 PlayerControl.LocalPlayer.RpcSyncSettings(PlayerControl.GameOptions);
-                __instance.oldValue = CustomGameOptions.NinjaInvisCD;
-                __instance.Value = CustomGameOptions.NinjaInvisCD;
-                __instance.ValueText.Text = CustomGameOptions.NinjaInvisCD.ToString();
+                __instance.oldValue = CustomGameOptions.ScorpionInvisCD;
+                __instance.Value = CustomGameOptions.ScorpionInvisCD;
+                __instance.ValueText.Text = CustomGameOptions.ScorpionInvisCD.ToString();
                 
                 return false;
             }
