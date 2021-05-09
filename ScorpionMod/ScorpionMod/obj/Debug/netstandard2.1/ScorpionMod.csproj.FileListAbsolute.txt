@@ -1,6 +1,4 @@
-D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csprojAssemblyReference.cache
-D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.Properties.Resources.resources
-D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.GenerateResource.cache
-D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfoInputs.cache
-D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfo.cs
-D:\Github\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CoreCompileInputs.cache
+C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csprojAssemblyReference.cache
+C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfoInputs.cache
+C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfo.cs
+C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CoreCompileInputs.cache

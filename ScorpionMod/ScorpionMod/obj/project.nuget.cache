@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XBYO1zBmXQDDBGqyHeZVb48/D4N8VMSLL6wVFAWZXG3F+hVPE2ZaNJ4cRfxgaStQBkRNNz+RBTb197V4oYmmIQ==",
+  "dgSpecHash": "Rqpz+KlLM1kTJSLM2su9URjS/X3TwXpcJnKvSuvQRPtFc5GUBTwkRrcyeXLEyh4OCbeg7LvCH5Ns9/S1J1nUAw==",
   "success": true,
-  "projectFilePath": "D:\\Github\\NinjaMod\\ScorpionMod\\ScorpionMod\\ScorpionMod.csproj",
+  "projectFilePath": "C:\\Users\\19195\\Desktop\\ScorpionMod\\ScorpionMod\\ScorpionMod\\ScorpionMod.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\19195\\.nuget\\packages\\reactor.oxygenfilter.msbuild\\0.3.0\\reactor.oxygenfilter.msbuild.0.3.0.nupkg.sha512"
   ],
