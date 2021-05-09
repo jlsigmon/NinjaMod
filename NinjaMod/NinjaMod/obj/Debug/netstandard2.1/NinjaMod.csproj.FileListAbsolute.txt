@@ -1,0 +1,37 @@
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csprojAssemblyReference.cache
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfoInputs.cache
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfo.cs
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CoreCompileInputs.cache
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.deps.json
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.dll
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.pdb
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\Reactor-2021.4.12s.dll
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CopyComplete
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.dll
+C:\Users\19195\Desktop\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.pdb
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.dll
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.pdb
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csprojAssemblyReference.cache
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfoInputs.cache
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfo.cs
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CoreCompileInputs.cache
+D:\Github\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.deps.json
+D:\Github\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.dll
+D:\Github\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.pdb
+D:\Github\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\Reactor-2021.3.31.3s.dll
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CopyComplete
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.deps.json
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.dll
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\NinjaMod.pdb
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\bin\Debug\netstandard2.1\Reactor-2021.3.31.3s.dll
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csprojAssemblyReference.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfoInputs.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.AssemblyInfo.cs
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CoreCompileInputs.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.CopyComplete
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.dll
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.pdb
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.Properties.Resources.resources
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.GenerateResource.cache
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.Properties.Resources.resources
+D:\Github\NinjaMod\NinjaMod\obj\Debug\netstandard2.1\NinjaMod.csproj.GenerateResource.cache
