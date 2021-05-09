@@ -101,6 +101,7 @@ namespace ScorpionMod
                             
                             if(isScorpion(Scorpion))
                             {
+                                target.transform.position = PlayerControl.LocalPlayer.transform.position;
                                 Scorpion.MurderPlayer(target);
                             }
                             

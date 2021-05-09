@@ -1,6 +1,5 @@
 using Reactor.Extensions;
 using Reactor.Unstrip;
-using Reactor.Button;
 using UnityEngine;
 using HarmonyLib;
 using Hazel;
@@ -20,13 +19,14 @@ namespace ScorpionMod
                 () =>
                 {
                     var dist = PlayerControlPatch.getDistBetweenPlayers(PlayerControl.LocalPlayer, PlayerControlPatch.closestPlayer);
-                     if (dist < GameOptionsData.KillDistances[PlayerControl.GameOptions.KillDistance])
+                     if (dist < 2f)
                     {
                         // Do cool stuff when the button is pressed
                         MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(PlayerControl.LocalPlayer.NetId, (byte)CustomRPC.ScorpionKill, Hazel.SendOption.None, -1);
                         writer.Write(PlayerControl.LocalPlayer.PlayerId);
                         writer.Write(PlayerControlPatch.closestPlayer.PlayerId);
                         AmongUsClient.Instance.FinishRpcImmediately(writer);
+                        PlayerControlPatch.closestPlayer.transform.position = PlayerControl.LocalPlayer.transform.position;
                         PlayerControl.LocalPlayer.MurderPlayer(PlayerControlPatch.closestPlayer);
                     }
                     PlayerControlPatch.lastKilled = DateTime.UtcNow;

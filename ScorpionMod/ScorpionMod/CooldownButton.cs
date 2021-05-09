@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Reactor.Button
+namespace ScorpionMod
 {
     public class CooldownButton
     {
@@ -117,7 +117,8 @@ namespace Reactor.Button
             button.OnClick.AddListener((UnityEngine.Events.UnityAction)listener);
             void listener()
             {
-                if (Timer < 0f && CanUse_ && Enabled)
+                var dist = PlayerControlPatch.getDistBetweenPlayers(PlayerControl.LocalPlayer, PlayerControlPatch.closestPlayer);
+                if (Timer < 0f && CanUse_ && Enabled && dist < 2f)
                 {
                     KillButtonManager.renderer.color = new Color(1f, 1f, 1f, 0.3f);
                     if (HasEffectDuration)
@@ -136,7 +137,8 @@ namespace Reactor.Button
             KillButtonManager.renderer.sprite = this.Sprite_;
             if (Timer < 0f)
             {
-                if (Enabled)
+                var dist = PlayerControlPatch.getDistBetweenPlayers(PlayerControl.LocalPlayer, PlayerControlPatch.closestPlayer);
+                if (Enabled && dist < 2f)
                     KillButtonManager.renderer.color = new Color(1f, 1f, 1f, 1f);
                 else
                     KillButtonManager.renderer.color = new Color(1f, 1f, 1f, .3f);
