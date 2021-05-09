@@ -2,3 +2,16 @@ C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard
 C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfoInputs.cache
 C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfo.cs
 C:\Users\19195\Desktop\ScorpionMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CoreCompileInputs.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\ScorpionMod.deps.json
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\ScorpionMod.dll
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\ScorpionMod.pdb
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\bin\Debug\netstandard2.1\Reactor-2021.3.31.3s.dll
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csprojAssemblyReference.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.Properties.Resources.resources
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.GenerateResource.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfoInputs.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.AssemblyInfo.cs
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CoreCompileInputs.cache
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.csproj.CopyComplete
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.dll
+C:\Users\Levelup 3\Documents\Among Us 4s(working ver)\NinjaMod\NinjaMod\ScorpionMod\ScorpionMod\obj\Debug\netstandard2.1\ScorpionMod.pdb

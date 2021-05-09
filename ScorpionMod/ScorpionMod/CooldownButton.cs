@@ -47,8 +47,14 @@ namespace Reactor.Button
         public Action OnEffectEnd;
         public HudManager HudManager;
         public bool CanUse_;
+		private Action p1;
+		private float v;
+		private float killbutton;
+		private Vector2 vector2;
+		private Func<bool> p2;
+		private HudManager instance;
 
-        public CooldownButton(Action onClick, float cooldown, float v, byte[] image, Vector2 positionOffset, Func<bool> useTester, HudManager hudManager, float effectDuration, Action onEffectEnd)
+		public CooldownButton(Action onClick, float cooldown, float v, byte[] image, Vector2 positionOffset, Func<bool> useTester, HudManager hudManager, float effectDuration, Action onEffectEnd)
         {
             SetVars(onClick, cooldown, image, positionOffset, useTester, hudManager);
             this.HasEffectDuration = true;
@@ -63,7 +69,18 @@ namespace Reactor.Button
             this.HasEffectDuration = false;
             Update();
         }
-        private void SetVars(Action onClick, float cooldown, byte[] image, Vector2 positionOffset, Func<bool> useTester, HudManager hudManager)
+
+		public CooldownButton(Action p1, float v, float killbutton, Vector2 vector2, Func<bool> p2, HudManager instance)
+		{
+			this.p1 = p1;
+			this.v = v;
+			this.killbutton = killbutton;
+			this.vector2 = vector2;
+			this.p2 = p2;
+			this.instance = instance;
+		}
+
+		private void SetVars(Action onClick, float cooldown, byte[] image, Vector2 positionOffset, Func<bool> useTester, HudManager hudManager)
         {
             buttons.Add(this);
             this.HudManager = hudManager;
