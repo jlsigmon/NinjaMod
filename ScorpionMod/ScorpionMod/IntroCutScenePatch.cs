@@ -13,7 +13,7 @@ namespace ScorpionMod
             {
                 __instance.__this.Title.Text = "Scorpion";
                 __instance.__this.Title.Color = new Color((float)1, (float)0.92, (float)0.016, 1);
-                __instance.__this.ImpostorText.Text = "Get Over Here!!!";
+                __instance.__this.ImpostorText.Text = "Get Over Here";
                 __instance.__this.BackgroundBar.material.color = new Color((float)1, (float)0.92, (float)0.016, 1);
 
             }
