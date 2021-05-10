@@ -14,7 +14,8 @@ namespace NinjaMod
         SetNinja = 40,
         SyncCustomSettings = 41,
         NinjaInvis = 42,
-        NinjaUninvis = 43
+        NinjaUninvis = 43,
+        NinjaTeleport = 44
 
     }
     enum RPC
@@ -123,6 +124,20 @@ namespace NinjaMod
                             }
                             break;
                         }
+
+                    case (byte)CustomRPC.NinjaTeleport:
+                        {
+                            byte ninja = reader.ReadByte();
+
+                            foreach (PlayerControl player in PlayerControl.AllPlayerControls)
+                            {
+                                if (player.PlayerId == ninja)
+                                {
+                                    Teleport(player);
+                                }
+                            }
+                            break;
+                        }
                 }
             }
             catch {
@@ -199,6 +214,19 @@ namespace NinjaMod
 
 
             PlayerControl.SetPlayerMaterialColors(colorId, player.CurrentPet.rend);
+        }
+
+        public static void Teleport(PlayerControl player)
+        {
+            
+            if (PlayerControlPatch.isNinja(PlayerControl.LocalPlayer) || PlayerControl.LocalPlayer.Data.IsDead)
+            {
+                var selected = Input.mousePosition;
+                Camera.main.transform.position = selected;
+                player.transform.position = Camera.main.transform.position;
+                
+                
+            }
         }
 
         public static void changeTaskState(bool active)
