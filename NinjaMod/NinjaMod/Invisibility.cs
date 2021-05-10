@@ -39,7 +39,7 @@ namespace NinjaMod
                         PlayerControl.LocalPlayer.MyPhysics.SetSkin(0);
                     }
                     if (PlayerControl.LocalPlayer.CurrentPet != null)
-                    {
+					{
                         UnityEngine.Object.Destroy(PlayerControl.LocalPlayer.CurrentPet.gameObject);
                     }
                     PlayerControl.LocalPlayer.CurrentPet =
