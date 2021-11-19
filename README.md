@@ -1,0 +1,2 @@
+# NinjaMod
+Ninja AmongUs Mod
