@@ -1,2 +1,2 @@
 # NinjaMod
-Ninja AmongUs Mod
+Ninja AmongUs Mod.
